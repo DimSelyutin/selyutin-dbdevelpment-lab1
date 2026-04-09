@@ -1,0 +1,25 @@
+@model IEnumerable<Museum.Web.Models.Exhibit>
+@{
+    ViewData["Title"] = "Экспонаты на реставрации";
+}
+
+<h2>Экспонаты на реставрации</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Описание</th>
+            <th>Зал</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@(item.Hall?.Name ?? "Не назначен")</td>
+        </tr>
+    }
+    </tbody>
+</table>

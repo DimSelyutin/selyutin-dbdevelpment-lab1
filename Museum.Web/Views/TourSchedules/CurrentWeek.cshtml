@@ -1,0 +1,31 @@
+@model IEnumerable<Museum.Web.Models.TourSchedule>
+@{
+    ViewData["Title"] = "Расписание на текущую неделю";
+}
+
+<h2>Расписание экскурсий на текущую неделю</h2>
+<p><strong>Период:</strong> @ViewData["WeekRange"]</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Дата</th>
+            <th>Время</th>
+            <th>Экскурсия</th>
+            <th>Гид</th>
+            <th>Группа</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Date.ToString("dd.MM.yyyy")</td>
+            <td>@item.Time.ToString("HH:mm")</td>
+            <td>@item.Excursion?.Title</td>
+            <td>@item.Guide?.FullName</td>
+            <td>@item.TourGroup?.Name</td>
+        </tr>
+    }
+    </tbody>
+</table>

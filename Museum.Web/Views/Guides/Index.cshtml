@@ -1,0 +1,23 @@
+@model IEnumerable<Museum.Web.Models.Guide>
+@{
+    ViewData["Title"] = "Экскурсоводы";
+}
+
+<h2>Экскурсоводы</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ФИО</th>
+            <th>Языки</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FullName</td>
+            <td>@item.Languages</td>
+        </tr>
+    }
+    </tbody>
+</table>

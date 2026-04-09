@@ -1,0 +1,25 @@
+@model IEnumerable<Museum.Web.ViewModels.GuideWorkloadViewModel>
+@{
+    ViewData["Title"] = "Загруженность экскурсоводов";
+}
+
+<h2>Загруженность экскурсоводов</h2>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Экскурсовод</th>
+            <th>Языки</th>
+            <th>Кол-во экскурсий</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.GuideName</td>
+            <td>@item.Languages</td>
+            <td>@item.ExcursionsCount</td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Главная";
+}
+
+<div>
+    <h1 class="display-5">Информационная система музея</h1>
+    <p>Приложение демонстрирует работу с базой данных, middleware, MVC и кэшированием ResponseCache.</p>
+    <ul>
+        <li><a asp-controller="Exhibits" asp-action="Index">Фонды: экспонаты</a></li>
+        <li><a asp-controller="TourSchedules" asp-action="Index">График экскурсий</a></li>
+        <li><a asp-controller="Guides" asp-action="Index">Список экскурсоводов</a></li>
+        <li><a asp-controller="TourSchedules" asp-action="CurrentWeek">Расписание на текущую неделю</a></li>
+        <li><a asp-controller="Exhibits" asp-action="UnderRestoration">Экспонаты на реставрации</a></li>
+        <li><a asp-controller="Guides" asp-action="Workload">Загруженность экскурсоводов</a></li>
+    </ul>
+</div>
